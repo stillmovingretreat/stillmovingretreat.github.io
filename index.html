@@ -1023,7 +1023,7 @@
           </div>
           <div class="hero-meta-item">
             <div class="hero-meta-label">Group size</div>
-            <div class="hero-meta-value">Max 13 guests</div>
+            <div class="hero-meta-value">Max 12 guests</div>
           </div>
           <div class="hero-meta-item">
             <div class="hero-meta-label">From</div>
@@ -1087,7 +1087,7 @@
       <div class="experience-item reveal">
         <div class="experience-num">I.</div>
         <h3>A small group</h3>
-        <p>Capped at 13 guests so every person gets personal attention, hands-on adjustments and the space to ask what they need to ask.</p>
+        <p>Capped at 12 guests so every person gets personal attention, hands-on adjustments and the space to ask what they need to ask.</p>
       </div>
       <div class="experience-item reveal">
         <div class="experience-num">II.</div>
@@ -1113,13 +1113,13 @@
   <div class="container">
     <div class="capacity-inner">
       <div>
-        <h3><em>Thirteen</em> spots. First come, first served.</h3>
-        <p style="margin-top: 14px;">The retreat is confirmed and will go ahead regardless of group size. Spots are limited to 13 - bookings are taken as they come, with Early Bird pricing locked in until 1 July 2026.</p>
+        <h3><em>Twelve</em> spots. First come, first served.</h3>
+        <p style="margin-top: 14px;">The retreat is confirmed and will go ahead regardless of group size. Spots are limited to 12 - bookings are taken as they come, with Early Bird pricing locked in until 1 July 2026.</p>
       </div>
-      <div class="capacity-meter" id="capacity-meter" data-current="8" data-max="13">
+      <div class="capacity-meter" id="capacity-meter" data-current="8" data-max="12">
         <div class="capacity-meter-top">
           <div class="capacity-meter-label">Spots remaining</div>
-          <div class="capacity-meter-count"><em id="capacity-current">13</em> / <span id="capacity-max">13</span></div>
+          <div class="capacity-meter-count"><em id="capacity-current">12</em> / <span id="capacity-max">12</span></div>
         </div>
         <div class="capacity-bar">
           <div class="capacity-bar-fill" id="capacity-bar-fill"></div>
@@ -1153,11 +1153,12 @@
             <th class="col-price">Early Bird</th>
           </tr></thead>
           <tbody>
-            <tr><td class="col-room">Room I &nbsp;&nbsp;&nbsp;&nbsp;· &nbsp;Triple room</td><td class="col-price">€581</td><td class="col-price col-early">€540</td></tr>
+            <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room I &nbsp;&nbsp;&nbsp;&nbsp;· &nbsp;Triple room</td><td class="col-price">€581</td><td class="col-price col-early">€540</td></tr>
             <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room II &nbsp;&nbsp;&nbsp;· &nbsp;Double ensuite</td><td class="col-price">€662</td><td class="col-price col-early">€617</td></tr>
             <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room III &nbsp;&nbsp;· &nbsp;Twin room</td><td class="col-price">€622</td><td class="col-price col-early">€578</td></tr>
             <tr><td class="col-room">Room IV &nbsp;· &nbsp;4-people room</td><td class="col-price">€567</td><td class="col-price col-early">€527</td></tr>
             <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room V &nbsp;&nbsp;· &nbsp;Mezzanine twin</td><td class="col-price">€622</td><td class="col-price col-early">€578</td></tr>
+            <tr><td class="col-room">Room VI &nbsp;· &nbsp;Ground floor double ensuite</td><td class="col-price">€677</td><td class="col-price col-early">€629</td></tr>
           </tbody>
         </table>
         <p class="rooms-note" style="text-align: left; margin-top: 16px; margin-left: 0; margin-right: 0; max-width: none; font-size: 14px;">*Solo participants booking shared occupancy will be matched thoughtfully.</p>
@@ -1181,6 +1182,7 @@
     </div>
 
     <div class="rooms-grid">
+      <!-- Room I hidden (no longer available)
       <div class="room-card reveal">
         <div class="room-num">Room I.</div>
         <h3>Triple room</h3>
@@ -1191,6 +1193,7 @@
           <a class="room-book-btn" href="#contact" data-room="Room I - Triple room">Book</a>
         </div>
       </div>
+      -->
 
       <div class="room-card reveal">
         <div class="room-num">Room II.</div>
@@ -1233,21 +1236,16 @@
         </div>
       </div>
 
-      <!-- Room VI hidden (booked / no longer available)
-      <div class="room-card reveal" style="opacity: 0.7;">
+      <div class="room-card reveal">
         <div class="room-num">Room VI.</div>
-        <h3>Ground floor ensuite</h3>
+        <h3>Ground floor double ensuite</h3>
         <div class="room-capacity">Double bed · Private bathroom · Sleeps 2 · Ground floor</div>
         <p class="room-desc">A quiet ground-floor room with its own bathroom. Ideal for anyone preferring fewer stairs.</p>
         <div class="room-price-row">
-          <div>
-            <span class="room-price" style="color: var(--ink-muted); font-size: 20px;">Booked</span>
-            <span class="room-price-unit">no longer available</span>
-          </div>
-          <span class="room-status status-booked">Booked</span>
+          <span class="room-status status-available">Available</span>
+          <a class="room-book-btn" href="#contact" data-room="Room VI - Ground floor double ensuite">Book</a>
         </div>
       </div>
-      -->
 
     </div>
   </div>
@@ -1491,12 +1489,12 @@
 <script>
   // --- ADAPTIVE CAPACITY METER ---
   // To update bookings, change data-current="N" on #capacity-meter above.
-  // data-max is total bookable beds (13)
+  // data-max is total bookable beds (12)
   (function() {
     const meter = document.getElementById('capacity-meter');
     if (!meter) return;
     const current = parseInt(meter.dataset.current, 10) || 0;
-    const max = parseInt(meter.dataset.max, 10) || 13;
+    const max = parseInt(meter.dataset.max, 10) || 12;
     const spotsLeft = max - current;
 
     // Count shown is spots REMAINING (out of total), framed positively
