@@ -164,6 +164,48 @@
     }
   }
 
+  /* --- ANNOUNCEMENT BAR --- */
+  .announce-bar {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .announce-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 9px 32px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .announce-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: #c9a86a;
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+  .announce-text { color: rgba(244, 241, 236, 0.82); }
+  .announce-text strong { color: var(--bg); font-weight: 600; }
+  .announce-link {
+    color: var(--bg);
+    border-bottom: 1px solid rgba(244, 241, 236, 0.4);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .announce-link:hover { opacity: 1; border-bottom-color: var(--bg); }
+  @media (max-width: 560px) {
+    .announce-inner { padding: 9px 20px; font-size: 12px; }
+  }
+
   /* --- HERO --- */
   .hero {
     display: grid;
@@ -1098,6 +1140,14 @@
 </script>
 </head>
 <body>
+
+<div class="announce-bar">
+  <div class="announce-inner">
+    <span class="announce-tag">Early Bird</span>
+    <span class="announce-text">Only <strong>2 spots</strong> left at the early bird rate - offer ends 1 July</span>
+    <a class="announce-link" href="#contact">Book now →</a>
+  </div>
+</div>
 
 <nav>
   <div class="nav-inner">
