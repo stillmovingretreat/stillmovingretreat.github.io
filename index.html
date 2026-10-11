@@ -1147,7 +1147,7 @@
 <div class="announce-bar">
   <div class="announce-inner">
     <a class="announce-tag" href="#contact">Book Now</a>
-    <span class="announce-text">Only <strong>2 spots</strong> left</span>
+    <span class="announce-text">Only <strong>1 spot</strong> left</span>
   </div>
 </div>
 
@@ -1285,7 +1285,7 @@
         <h3><em>Twelve</em> spots. First come, first served.</h3>
         <p style="margin-top: 14px;">The retreat is confirmed and will go ahead regardless of group size. Spots are limited to 12 - bookings are taken as they come.</p>
       </div>
-      <div class="capacity-meter" id="capacity-meter" data-current="10" data-max="12">
+      <div class="capacity-meter" id="capacity-meter" data-current="11" data-max="12">
         <div class="capacity-meter-top">
           <div class="capacity-meter-label">Spots remaining</div>
           <div class="capacity-meter-count"><em id="capacity-current">12</em> / <span id="capacity-max">12</span></div>
@@ -1319,7 +1319,7 @@
             <th class="col-price">Price/spot</th>
           </tr></thead>
           <tbody>
-            <tr><td class="col-room">Room I &nbsp;&nbsp;&nbsp;&nbsp;· &nbsp;Triple room</td><td class="col-price">€597</td></tr>
+            <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room I &nbsp;&nbsp;&nbsp;&nbsp;· &nbsp;Triple room</td><td class="col-price">€597</td></tr>
             <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room II &nbsp;&nbsp;&nbsp;· &nbsp;Double ensuite</td><td class="col-price">€662</td></tr>
             <tr style="text-decoration: line-through; color: var(--ink-muted);"><td class="col-room">Room III &nbsp;&nbsp;· &nbsp;Twin room</td><td class="col-price">€622</td></tr>
             <tr><td class="col-room">Room IV &nbsp;· &nbsp;Quad room</td><td class="col-price">€567</td></tr>
@@ -1352,8 +1352,7 @@
         <div class="room-capacity">Double + single bed · Sleeps 3 · 2nd floor</div>
         <p class="room-desc">The largest bedroom in the house, on the top floor. A double and a single bed, with the sauna and balneo bath just down the hall. Coming solo and need a roommate? We can match you.</p>
         <div class="room-price-row">
-          <span class="room-status status-limited">1 spot left</span>
-          <a class="room-book-btn" href="#contact" data-room="Room I - Triple room">Book</a>
+          <span class="room-status status-booked">Booked</span>
         </div>
       </div>
 
@@ -1622,7 +1621,7 @@
     <p>Bookings are handled personally. Send an email and Fanny will walk you through the next steps - usually within 24 hours.</p>
 
     <div class="contact-methods">
-      <a class="contact-btn primary" id="contact-email-btn" href="mailto:fanny.omshantiyoga@gmail.com?subject=Still%20Moving%20Yoga%20Retreat%20Booking&body=Hi%20Fanny%2C%0A%0AI%27d%20like%20to%20book%20a%20spot%20on%20the%20Still%20Moving%20Yoga%20retreat%20(29%20Oct%20%E2%80%93%201%20Nov%202026).%0A%0A%E2%80%A2%20Room%20preference%3A%20%5BRoom%20I%20%2F%20IV%5D%0A%E2%80%A2%20Shared%20or%20sole%20occupancy%3A%20%5B...%5D%0A%E2%80%A2%20Name(s)%3A%20%5B...%5D%0A%E2%80%A2%20Dietary%20needs%20%2F%20allergies%3A%20%5B...%5D%0A%E2%80%A2%20Yoga%20experience%3A%20%5B...%5D%0A%E2%80%A2%20Questions%3A%20%5B...%5D%0A%0AThank%20you%21">Email Fanny</a>
+      <a class="contact-btn primary" id="contact-email-btn" href="mailto:fanny.omshantiyoga@gmail.com?subject=Still%20Moving%20Yoga%20Retreat%20Booking&body=Hi%20Fanny%2C%0A%0AI%27d%20like%20to%20book%20a%20spot%20on%20the%20Still%20Moving%20Yoga%20retreat%20(29%20Oct%20%E2%80%93%201%20Nov%202026).%0A%0A%E2%80%A2%20Room%20preference%3A%20%5BRoom%20IV%5D%0A%E2%80%A2%20Shared%20or%20sole%20occupancy%3A%20%5B...%5D%0A%E2%80%A2%20Name(s)%3A%20%5B...%5D%0A%E2%80%A2%20Dietary%20needs%20%2F%20allergies%3A%20%5B...%5D%0A%E2%80%A2%20Yoga%20experience%3A%20%5B...%5D%0A%E2%80%A2%20Questions%3A%20%5B...%5D%0A%0AThank%20you%21">Email Fanny</a>
     </div>
 
     <div class="cancellation">
@@ -1680,7 +1679,7 @@
     if (current >= max) {
       msgEl.textContent = 'The retreat is fully booked.';
     } else if (spotsLeft <= 3) {
-      msgEl.textContent = `Only ${spotsLeft} spots left.`;
+      msgEl.textContent = `Only ${spotsLeft} ${spotsLeft === 1 ? 'spot' : 'spots'} left.`;
     } else {
       // keep the early-bird message as the default while there's plenty of room
       // (don't overwrite the HTML default)
